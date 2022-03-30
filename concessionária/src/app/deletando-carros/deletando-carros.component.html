@@ -1,0 +1,19 @@
+<button  aria-label="Botão que volta para a pagina da lista de atualização" 
+        routerLink="/deletarcarro">Voltar</button>
+
+<div class="content_top">
+    <h3 >
+        DELETE O CARRO: {{carro?.marca}}
+    </h3>
+</div>
+
+<div>
+    <h2  aria-label="Uma pergunta que diz TEM CERTEZA QUE VOCÊ QUER DELETAR O carro, e logo abaixo tem dois botões">
+        TEM CERTEZA QUE VOCÊ QUER DELETAR O CARRO "{{carro?.marca}}"?
+    </h2>
+
+    <button class="btn btn-danger" routerLink="/deletarcarro" 
+    aria-label="Botão que não deleta o carro e volta para a pagina de escolha de qual carro será deletado">NÃO</button>
+    <button class="btn btn-success" (click)="deletarUmcarro(carro.id)" 
+     aria-label="Botão que deleta o carro">SIM</button>
+</div>

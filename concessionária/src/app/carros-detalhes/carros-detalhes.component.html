@@ -1,0 +1,76 @@
+<button  aria-label="Botão que volta para a pagina princial" routerLink="carros">Voltar</button>
+
+<div class="content_top">
+    <h3>
+        {{carro?.marca}}
+    </h3>
+</div>
+
+<div>
+    <div class="imagem">
+        <h2>
+            <img src="{{carro?.imagem}}"
+            height="400" width="400">                            
+        </h2>
+    </div>
+</div>
+
+<div class="detalhes">
+    <diV class="modelo" >
+        <div style='text-align:justify'>
+            <b>MODELO:</b> 
+            <div class="modelo_tamanho">
+                {{carro?.modelo}}
+            </div>
+        </div>
+    </diV>
+    <br>
+    <!--
+    <div class="genero" >
+        <b>GÊNERO:</b>
+        <div class="nomes_dos_generos" *ngFor="let genre of carro?.genres">{{genre?.nomeDoGenero}}</div>
+    </div>
+    <br>
+    -->
+    <div class="ano" >
+        <b>ANO:  </b>
+        <div class="tamanho_da_ano">{{carro?.ano}}</div>
+    </div>
+    <br>
+    <div class="fabricante" >
+        <b>FABRICANTE:  </b>
+        <div class="tamanho_da_ano">{{carro?.fabricante}}</div>
+    </div>
+    <br>
+    <div class="cor" >
+        <div style='text-align:justify'>
+            <b>COR: </b>
+            <div class="tamanho_da_cor">{{carro?.cor}}</div>    
+        </div>
+    </div>
+    <br>
+    <div class="placa" >
+        <b>PLACA: </b>
+        <div class="tamanho_placa">{{carro?.placa}}</div>
+    </div>
+    <br>
+    <div class="placa" >
+        <b>COMBUSTÍVEL: </b>
+        <div class="gasolina">{{carro?.gasolina}}</div>
+    </div>
+    <br>
+    <div class="placa" >
+        <b>QUILOMETRAGEM: </b>
+        <div class="gasolina">{{carro?.quilometragem}}</div>
+    </div>
+    <br>
+    <div class="chassi" >
+        <b>CHASSI: </b>
+        <div class="gasolina">{{carro?.chassi}}</div>
+    </div>
+    <br>
+    <div class="valor" >
+        <b>VALOR: </b>
+        <div class="gasolina">R$ {{carro?.valor}},00</div>
+    </div>
+</div>

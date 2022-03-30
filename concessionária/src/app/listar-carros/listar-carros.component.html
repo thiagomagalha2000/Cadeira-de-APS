@@ -1,0 +1,49 @@
+<div class="CriarDeletarAtualizar">
+    <button class="btn btn-primary" routerLink="/senhaCriar">CADASTRAR CARRO</button>
+    <button class="btn btn-danger" routerLink="/senhaDeletar">DELETAR CARRO</button>
+    <button class="btn btn-success" routerLink="/senhaAtualizar">ATUALIZAR CARRO</button>
+</div>
+
+<div class="CriarDeletarAtualizar">
+    <button class="btn btn-primary" routerLink="/senhaCriarFabricante">CADASTRAR FABRICANTE</button>
+    <button class="btn btn-danger" routerLink="/senhaDeletarFabricante">DELETAR FABRICANTE</button>
+    <button class="btn btn-success" routerLink="/senhaAtualizarFabricante">ATUALIZAR FABRICANTE</button>
+</div>
+
+<div class="topo">
+    <div class="search_box">
+        <div class="pesquisa">
+            <input  aria-label="Campo de texto para a busca dos carros pelo seu nome"
+            (keyup)="pesquisarcarrosPeloNome($event)" placeholder="BUSCAR CARRO PELO NOME" style="width:320px;">
+        </div>
+    </div>
+</div>
+
+<div class="content_top">
+    <h3 classe="carro"  aria-label="carros">
+        CARROS
+    </h3>
+    <h4  aria-label="em cartaz">
+        à venda
+    </h4>
+</div>
+
+<div class="section group">
+    <div class="grid_1_of_5 images_1_of_5" *ngFor="let carro of carros">
+        <div class="carros">
+            <img src="{{carro.imagem}}"
+            height="150" width="150">
+            <br>
+            <div class="titulo"  aria-label="O nome do carro é: ">
+                {{carro.marca}} - {{carro.modelo}}
+            </div>
+
+            <div class="lançamento" >
+                Data: {{carro.ano}}
+                <br>
+            </div>
+        </div>
+        <button aria-label="Botão que vai para os detalhes do carro" routerLink="/detalhes/{{carro.id}}">Detalhes</button>
+        <button routerLink="/comprarCarro/{{carro.id}}">COMPRAR</button>
+    </div>
+</div>

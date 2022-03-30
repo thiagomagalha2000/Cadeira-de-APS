@@ -1,0 +1,123 @@
+<div class="content_top">
+    <h3 classe="carro"  aria-label="Cadastre um carro" required readonly>
+        DADOS DO CARRO
+    </h3>
+</div>
+
+<div>
+    <div class="imagem">
+        <h2>
+            <img src="{{carro?.imagem}}"
+            height="400" width="400">                            
+        </h2>
+    </div>
+</div>
+
+<div class="detalhes">
+    <diV class="modelo" >
+        <div style='text-align:justify'>
+            <b>MODELO:</b> 
+            <div class="modelo_tamanho">
+                {{carro?.modelo}}
+            </div>
+        </div>
+    </diV>
+    <br>
+    <!--
+    <div class="genero" >
+        <b>GÊNERO:</b>
+        <div class="nomes_dos_generos" *ngFor="let genre of carro?.genres">{{genre?.nomeDoGenero}}</div>
+    </div>
+    <br>
+    -->
+    <div class="ano" >
+        <b>ANO:  </b>
+        <div class="tamanho_da_ano">{{carro?.ano}}</div>
+    </div>
+    <br>
+    <div class="fabricante" >
+        <b>FABRICANTE:  </b>
+        <div class="tamanho_da_ano">{{carro?.fabricante}}</div>
+    </div>
+    <br>
+    <div class="cor" >
+        <div style='text-align:justify'>
+            <b>COR: </b>
+            <div class="tamanho_da_cor">{{carro?.cor}}</div>    
+        </div>
+    </div>
+    <br>
+    <div class="placa" >
+        <b>PLACA: </b>
+        <div class="tamanho_placa">{{carro?.placa}}</div>
+    </div>
+    <br>
+    <div class="placa" >
+        <b>COMBUSTÍVEL: </b>
+        <div class="gasolina">{{carro?.gasolina}}</div>
+    </div>
+    <br>
+    <div class="placa" >
+        <b>QUILOMETRAGEM: </b>
+        <div class="gasolina">{{carro?.quilometragem}}</div>
+    </div>
+    <br>
+    <div class="chassi" >
+        <b>CHASSI: </b>
+        <div class="gasolina">{{carro?.chassi}}</div>
+    </div>
+    <br>
+    <div class="valor" >
+        <b>VALOR: </b>
+        <div class="gasolina">R$ {{carro?.valor}},00</div>
+    </div>
+</div>
+
+<div class="content_top">
+    <h3 classe="carro"  aria-label="Cadastre um carro" required readonly>
+        DIGITE SEUS DADOS
+    </h3>
+</div>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="formularioDecliente">
+    <div class="form-group">
+        <h2>CPF</h2>
+        <input type="number" max="9999999999" name="cpf" id="cpf" class="form-control"
+        formControlName="cpf" placeholder="Digite o seu cpf" required>
+        <br>
+        <h2>NOME</h2>
+        <input type="text" name="nome" id="nome" class="form-control"
+        formControlName="nome" placeholder="Digite o seu nome" required>
+        <br>
+        <h2>ENDEREÇO</h2>
+        <input type="text" name="endereco" id="endereco" class="form-control"
+        formControlName="endereco" placeholder="Digite o seu endereco" required>
+        <br>
+        <h2>TELEFONE</h2>
+        <input type="number" name="telefone" id="telefone" class="form-control"
+        formControlName="telefone" placeholder="Digite o seu telefone" required>
+        <br>
+        <h2>EMAIL</h2>
+        <input type="text" name="email" id="email" class="form-control"
+        formControlName="email" placeholder="Digite o seu email" required>
+        <br>
+        <h2>CARTÃO</h2>
+        <input type="int" name="cartao" id="cartao" class="form-control"
+        formControlName="cartao" placeholder="Digite o numero do cartão" required>
+        <br>
+        <h2>FORMA DE PAGAMENTO</h2>
+        <select formControlName="parcelas" name="parcelas" id="parcelas">
+            <option value=24>24 vezes</option>
+            <option value=12>12 vezes</option>
+            <option value=10>10 vezes</option>
+            <option value=8>8 vezes</option>
+            <option value=6>6 vezes</option>
+            <option value=4>4 vezes</option>
+            <option value=0>Debito</option>
+        </select>
+        <br>
+    </div>
+
+    <input class="btn btn-danger" type="reset" name="Limpar" value="Limpar"  aria-label="Botão que limpa todo o formulário">
+    <input class="btn btn-success" type="submit" name="Comprar" value="Comprar" [disabled]="!formularioDecliente.valid" aria-label="Botão que comprar o carro">
+</form>

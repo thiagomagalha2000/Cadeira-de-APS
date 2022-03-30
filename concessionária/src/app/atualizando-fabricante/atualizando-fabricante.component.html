@@ -1,0 +1,23 @@
+<button  aria-label="Botão que volta para a pagina princial" routerLink="/carros">Voltar</button>
+
+<div class="content_top">
+    <h3 classe="carro"  aria-label="Atualize um fabricante" required>
+        ATUALIZE UM FABRICANTE
+    </h3>
+</div>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="formularioDeFabricante">
+    <div class="form-group">
+        <h2 for="nome">NOME</h2>
+        <input type="text" name="nome" id="nome" class="form-control"
+        formControlName="nome" placeholder="Digite o nome do fabricante" required>
+        <br>
+        <h2 for="cnpj">CNPJ</h2>
+        <input type="text" name="cnpj" id="cnpj" class="form-control"
+        formControlName="cnpj" placeholder="Digite o cnpj do fabricante" required>
+        <br>
+    </div>
+    
+    <input class="btn btn-danger" type="reset" name="Limpar" value="Limpar"  aria-label="Botão que limpa todo o formulário">
+    <input class="btn btn-success" type="submit" name="ATUALIZAR" value="ATUALIZAR" [disabled]="!formularioDeFabricante.valid"  aria-label="Botão que atualiza o carro">
+</form>

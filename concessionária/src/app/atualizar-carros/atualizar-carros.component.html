@@ -1,0 +1,41 @@
+<button  aria-label="Botão que volta para a pagina princial" routerLink="/carros">Voltar</button>
+
+<div class="content_top">
+    <h3 classe="carro"  aria-label="Escolha um carro para ser atualizado">
+        ATUALIZE UM CARRO
+    </h3>
+    <div class="pesquisa">
+        <input  aria-label="Campo de texto para a busca dos carros pelo seu nome"
+        (keyup)="pesquisarcarrosPeloNome($event)" placeholder="BUSCAR CARRO PELO NOME" style="width:320px;">
+    </div>
+    <table class="table"  aria-label="Tabela com a lista de carros com o nome, o ano, os gêneros e o botão de atualizar">
+        <thead class="thead-light">
+            <tr>
+                <th  aria-label="Coluna do nome dos carros">MARCA DO CARRO</th>
+                <th  aria-label="Coluna do ano dos carros">MODELO DO CARRO</th>
+                <th  aria-label="Coluna dos gêneros dos carros">ANO DO CARRO</th>
+                <th  aria-label="Coluna para placa os carros">PLACA DO CARRO</th>
+                <th  aria-label="Coluna para chassi os carros">CHASSI DO CARRO</th>
+                <th  aria-label="Coluna para atualizar os carros">ATUALIZAR O CARRO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let carro of carros">
+                <td >{{carro.marca}}</td>
+                <td >{{carro.modelo}}</td>
+                <td >{{carro.ano}}</td>
+                <td >{{carro.placa}}</td>
+                <td >{{carro.chassi}}</td>
+                <!--
+                <td >
+                    <a *ngFor="let genre of carro?.genres">{{carro?.nomeDoGenero}}<br></a>
+                </td>
+                -->
+                <td>
+                    <button class="btn btn-outline-success" routerLink="/atualizandocarro/{{carro.id}}"
+                             aria-label="Botão que vaia para a pagina que atualiza o carro">ATUALIZAR</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,19 @@
+<button  aria-label="Botão que volta para a pagina da lista de atualização" 
+        routerLink="/deletarFabricante">Voltar</button>
+
+<div class="content_top">
+    <h3 >
+        DELETE O FABRICANTE: {{fabricante?.nome}}
+    </h3>
+</div>
+
+<div>
+    <h2  aria-label="Uma pergunta que diz TEM CERTEZA QUE VOCÊ QUER DELETAR O fabricante, e logo abaixo tem dois botões">
+        TEM CERTEZA QUE VOCÊ QUER DELETAR O FABRICANTE "{{fabricante?.nome}}"?
+    </h2>
+
+    <button class="btn btn-danger" routerLink="/deletarfabricante" 
+    aria-label="Botão que não deleta o fabricante e volta para a pagina de escolha de qual fabricante será deletado">NÃO</button>
+    <button class="btn btn-success" (click)="deletarUmfabricante(fabricante.id)" 
+     aria-label="Botão que deleta o fabricante">SIM</button>
+</div>

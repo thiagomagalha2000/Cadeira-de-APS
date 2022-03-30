@@ -1,0 +1,29 @@
+<button  aria-label="Botão que volta para a pagina princial" routerLink="/carros">Voltar</button>
+
+<div class="content_top">
+    <h3 classe="carro"  aria-label="Delete um fabricante" required>
+        ATUALIZE UM FABRICANTE
+    </h3>
+    <div class="pesquisa">
+        <input  aria-label="Campo de texto para a busca dos carros pelo seu nome"
+        (keyup)="pesquisarFabricantesPeloNome($event)" placeholder="BUSCAR CARRO PELO NOME" style="width:320px;">
+    </div>
+    <table class="table"  aria-label="Tabela com a lista de carros com o nome, o ano, os gêneros e o botão de deletar">
+        <thead class="thead-light">
+            <tr>
+                <th aria-label="Coluna do nome dos FABRICANTES">NOME DO FABRICANTE</th>
+                <th aria-label="Coluna do cnpj dos FABRICANTES">CNPJ DO FABRICANTE</th>
+                <th aria-label="Coluna para deletar os carros">ATUALIZE O FABRICANTE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let fabricante of Fabricantes">
+                <td>{{fabricante.nome}}</td>
+                <td>{{fabricante.cnpj}}</td>
+                <td>
+                    <button class="btn btn-outline-success" routerLink="/atualizandoFabricante/{{fabricante.id}}">ATUALIZAR</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

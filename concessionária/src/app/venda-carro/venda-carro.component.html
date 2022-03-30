@@ -1,0 +1,115 @@
+<div>
+    <div class="content_top">
+        <h3 classe="carro"  aria-label="Cadastre um carro" required readonly>
+            DADOS DO CARRO
+        </h3>
+    </div>
+
+    <div>
+        <div class="imagem">
+            <h2>
+                <img src="{{carro?.imagem}}"
+                height="400" width="400">                            
+            </h2>
+        </div>
+    </div>
+
+    <div class="detalhes">
+        <diV class="modelo" >
+            <div style='text-align:justify'>
+                <b>MODELO:</b> 
+                <div class="modelo_tamanho">
+                    {{carro?.modelo}}
+                </div>
+            </div>
+        </diV>
+        <br>
+        <div class="ano" >
+            <b>ANO:  </b>
+            <div class="tamanho_da_ano">{{carro?.ano}}</div>
+        </div>
+        <br>
+        <div class="cor" >
+            <div style='text-align:justify'>
+                <b>COR: </b>
+                <div class="tamanho_da_cor">{{carro?.cor}}</div>    
+            </div>
+        </div>
+        <br>
+        <div class="placa" >
+            <b>PLACA: </b>
+            <div class="tamanho_placa">{{carro?.placa}}</div>
+        </div>
+        <br>
+        <div class="placa" >
+            <b>COMBUSTÍVEL: </b>
+            <div class="gasolina">{{carro?.gasolina}}</div>
+        </div>
+        <br>
+        <div class="placa" >
+            <b>QUILOMETRAGEM: </b>
+            <div class="gasolina">{{carro?.quilometragem}}</div>
+        </div>
+        <br>
+        <div class="chassi" >
+            <b>CHASSI: </b>
+            <div class="gasolina">{{carro?.chassi}}</div>
+        </div>
+        <br>
+        <div class="valor" >
+            <b>VALOR: </b>
+            <div class="gasolina">R$ {{carro?.valor}},00</div>
+        </div>
+    </div>    
+</div>
+<div>
+    <div class="content_top">
+        <h3 classe="carro"  aria-label="Cadastre um carro" required readonly>
+            DADOS DO CLIENTE
+        </h3>
+    </div>
+    <div class="detalhes-2">
+        <div class="modelo" >
+            <div style='text-align:justify'>
+                <b>CPF:</b> 
+                <div class="modelo_tamanho">
+                    {{cliente?.cpf}}**********
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="ano" >
+            <b>ENDEREÇO:  </b>
+            <div class="tamanho_da_ano">{{cliente?.endereco}}*********</div>
+        </div>
+        <br>
+        <div class="cor" >
+            <div style='text-align:justify'>
+                <b>TELEFONE: </b>
+                <div class="tamanho_da_cor">{{cliente?.telefone}}********</div>    
+            </div>
+        </div>
+        <br>
+    
+        <div class="placa" >
+            <b>EMAIL: </b>
+            <div class="tamanho_placa">{{cliente?.email}}**********</div>
+        </div>
+        <br>
+        <div class="placa" >
+            <b>CARTÃO: </b>
+            <div class="gasolina">{{cliente?.cartao}}***********</div>
+        </div>
+        <br>
+        <div class="placa" >
+            <b>PARCELAS: </b>
+            <div class="gasolina">{{cliente?.parcelas}} parcelas de {{valor}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="ComprarDeletarAtualizar">
+    <button class="btn btn-primary" (click)="comprarUmcarro(carro?.id)">COMPRAR CARRO</button>
+    <button class="btn btn-danger" routerLink="/carros">CANCELAR COMPRA</button>
+    <button class="btn btn-success" routerLink="/comprarCarro/{{carro?.id}}">ATUALIZAR COMPRA</button>
+</div>

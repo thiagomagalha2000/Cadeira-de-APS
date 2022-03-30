@@ -1,0 +1,70 @@
+<button  aria-label="Botão que volta para a pagina princial" routerLink="/carros">Voltar</button>
+
+<div class="content_top">
+    <h3 classe="carro"  aria-label="Cadastre um carro" required>
+        CADASTRE UM CARRO
+    </h3>
+</div>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="formularioDecarro">
+    <div class="form-group">
+        <h2 for="marca">MARCA</h2>
+        <input type="text" name="nome" id="marca" class="form-control"
+        formControlName="marca" placeholder="Digite a marca do carro" required>
+        <br>
+
+        <h2 for="modelo">MODELO</h2>
+        <input type="text" name="modelo" id="modelo" class="form-control"
+        formControlName="modelo" placeholder="Digite a modelo do carro" required>
+        <br>
+
+        <h2 for="placa">PLACA</h2>
+        <input type="text" name="placa" id="placa" class="form-control"
+        formControlName="placa" placeholder="Digite a placa do carro" required>
+        <br>
+
+        <h2 for="cor">COR</h2>
+        <input type="text" name="cor" id="cor" class="form-control"
+        formControlName="cor" placeholder=  "Digite a cor do carro" required>
+        <br>
+        
+        <h2 for="fabricante">FABRICANTE</h2>
+        <select formControlName="fabricante" name="fabricante" id="fabricante" placeholder="Digite o nome do fabricante carro" required>
+            <option *ngFor="let fabricante of fabricantes" value={{fabricante?.nome}}>{{fabricante?.nome}}</option>
+        </select>
+        <br>
+        
+        <h2 for="gasolina">COMBUSTÍVEL</h2>
+        <input type="text" name="gasolina" id="gasolina" class="form-control"
+        formControlName="gasolina" placeholder="Digite o tipo de gasolina do carro" required>
+        <br>
+        
+        <h2 for="quilometragem">QUILOMETRAGEM</h2>
+        <input type="text" name="quilometragem" id="quilometragem" class="form-control"
+        formControlName="quilometragem" placeholder="Digite a quilometragem do carro" required>
+        <br>
+        
+        <h2 for="chassi">CHASI</h2>
+        <input type="text" name="chassi" id="chassi" class="form-control"
+        formControlName="chassi" placeholder="Digite o chassi do carro" required>
+        <br>
+        
+        <h2 for="valor">VALOR</h2>
+        <input type="text" name="valor" id="valor" class="form-control"
+        formControlName="valor" placeholder="Digite o valor do carro" required>
+        <br>
+
+        <h2 for="imagem">IMAGEM</h2>
+        <input type="text" min="0" name="imagem" id="imagem" class="form-control"
+        formControlName="imagem" placeholder="Digite a url da imagem do carro" required>
+        <br>
+
+        <h2 for="anp">ANO</h2>
+        <input type="text" min="0" name="ano" id="anp" class="form-control"
+        formControlName="ano" placeholder="Digite o ano do carro" required>
+        <br>
+    </div>
+    
+    <input class="btn btn-danger" type="reset" name="Limpar" value="Limpar"  aria-label="Botão que limpa todo o formulário">
+    <input class="btn btn-success" type="submit" name="Cadastrar" value="Cadastrar" [disabled]="!formularioDecarro.valid"  aria-label="Botão que cadastra o carro">
+</form>
